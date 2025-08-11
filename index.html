@@ -49,7 +49,8 @@ var onemap = L.tileLayer('https://www.onemap.gov.sg/maps/tiles/Default/{z}/{x}/{
 
 onemap.addTo(map);
 
-// Marker
+// Markers
+//Theft of Bicycle Marker (Red)
 var redIcon = L.icon({
     iconUrl: 'img/redicon.png',
     iconSize: [35, 35],
@@ -57,8 +58,17 @@ var redIcon = L.icon({
     popupAnchor: [-1, -33],
 });
 
+//DMOP of Bicycle Marker (Blue)
 var blueIcon = L.icon({
     iconUrl: 'img/blueicon.png',
+    iconSize: [35, 35],
+    iconAnchor: [22, 39],
+    popupAnchor: [-1, -33],
+});
+
+//Mischief to Bicycle Marker (Green)
+var greenIcon = L.icon({
+    iconUrl: 'img/greenicon.png',
     iconSize: [35, 35],
     iconAnchor: [22, 39],
     popupAnchor: [-1, -33],
@@ -114,8 +124,17 @@ var tob12 = L.marker([1.3431755,103.8765725], { icon: redIcon });
 popup = tob12.bindPopup('F/20250629/7037<br/>Blk 215D Bidadari Pk Dr, Bicycle Bay<br/>TOB S.379 PC 1871<br/><br/>Ethereal and shire brand bicycle ($700) last parked on 29/5/2025 was discovered missing on 29/6/2025 at 12.50pm.<br/>Prone Timing: 12am to 12.50pm').openPopup()
 popup.addTo(map);
 
+var tob47 = L.marker([1.3391359,103.8722558], { icon: redIcon });
+popup = tob47.bindPopup('F/20250730/7038<br/>Woodleigh Mall Bicycle Bay near to Bidadari CC<br/>DMOP of bicycle<br/><br/>Merida brand bicycle ($2213) last seen on 1/6/2025 at 10.55am, was discovered missing on 27/7/2025 at 10.53pm.<br/>Prone Timing: -').openPopup()
+popup.addTo(map);
+
+var tob48 = L.marker([1.3363375,103.8888912], { icon: redIcon });
+popup = tob48.bindPopup('G/20250721/7014<br/>18 Tai Seng St, green railings<br/>DMOP of bicycle<br/><br/>Black bicycle ($200) last seen in-tact on 19/7/2025 at 6.30pm, was discovered missing on 20/7/2025 at 7am.<br/>Prone Timing: 6.30pm to 7am').openPopup()
+popup.addTo(map);
+
 //TOB Marker Grouping
-var tob = L.layerGroup([tob1, tob2, tob3, tob4, tob5, tob6, tob7, tob8, tob9, tob10, tob11, tob12])
+var tob = L.layerGroup([tob1, tob2, tob3, tob4, tob5, tob6, tob7, tob8, tob9, tob10, tob11, 
+tob12, tob47, tob48,])
 
 //DMOP of Bicycle
 
@@ -251,21 +270,33 @@ var dmopb46 = L.marker([1.3540147,103.8877527], { icon: blueIcon });
 popup = dmopb46.bindPopup('F/20250717/7023<br/>Blk 119 Hougang Ave 1, Bicycle Bay<br/>DMOP of bicycle<br/><br/>Liaoge brand bicycle ($200) last seen on 16/7/2025 at 7pm, was discovered missing on 17/7/2025 at 9am.<br/>Prone Timing: 7pm to 9am').openPopup()
 popup.addTo(map);
 
-var dmopb47 = L.marker([1.3391359,103.8722558], { icon: blueIcon });
-popup = dmopb47.bindPopup('F/20250730/7038<br/>33 Bidadari Pk Dr Woodleigh Residence, Bicycle Bay<br/>DMOP of bicycle<br/><br/>Merida brand bicycle ($2213) last seen on 1/6/2025 at 10.55am, was discovered missing on 27/7/2025 at 10.53pm.<br/>Prone Timing: -').openPopup()
-popup.addTo(map);
-
-var dmopb48 = L.marker([1.3363375,103.8888912], { icon: blueIcon });
-popup = dmopb48.bindPopup('G/20250721/7014<br/>18 Tai Seng St, green railings<br/>DMOP of bicycle<br/><br/>Black bicycle ($200) last seen in-tact on 19/7/2025 at 6.30pm, was discovered missing on 20/7/2025 at 7am.<br/>Prone Timing: 6.30pm to 7am').openPopup()
-popup.addTo(map);
-
 var dmopb49 = L.marker([1.3353558,103.8709445], { icon: blueIcon });
 popup = dmopb49.bindPopup('F/20250123/7038<br/>Blk 104A Bidadari Pk Dr, Bicycle Bay<br/>DMOP of bicycle<br/><br/>Complainant`s bicycle brake, caliper and rear wheel were discovered missing on 23/1/2025 around 11am. Last seen in-tact at the bicycle bay on 22/1/2025.<br/>Prone Timing: -').openPopup()
 popup.addTo(map);
 
+// Added on 11/8/25
+var dmopb50 = L.marker([1.3343536,103.8721222], { icon: blueIcon });
+popup = dmopb50.bindPopup('F/20250807/7002<br/>Blk 107B Bidadari Pk Dr outside #13-288<br/>DMOP of bicycle<br/><br/>Grey colour Raleigh Hybrid bicycle ($300) last seen in tact on 6/8/2025 at 11am, discovered missing at 9pm.<br/>Prone Timing: 11am to 9pm').openPopup()
+popup.addTo(map);
+
+// Mischief to Bicycle
+var mb49 = L.marker([1.3353024,103.8709824], { icon: greenIcon });
+popup = mb49.bindPopup('F/20250123/7038<br/>Blk 104A Bidadari Pk Dr, Bicycle Bay<br/>Mischief to bicycle S.426 PC 1871<br/><br/>Complainant`s bicycle brake, caliper and rear wheel were discovered missing on 23/1/2025 around 11am. Last seen in-tact at the bicycle bay on 22/1/2025.<br/>Prone Timing: -').openPopup()
+popup.addTo(map);
+
+var mb51 = L.marker([1.3367777,103.8633286], { icon: greenIcon });
+popup = mb51.bindPopup('F/20250730/0171<br/>Blk 114 Potong Pasir Ave 1 #10-872<br/>Mischief to bicycle S.426 PC 1871<br/><br/>Complainant`s bicycle left outside the unit was located at lvl 9. Resident from unit #09-876 shared that her bicycle left outside the unit, was taken by suspect (M/Mly in red tee shirt) leaving towards Blk 117 Potong Pasir around 6pm. Resident does not wish to pursue. No file.<br/>Prone Timing: Around 6pm').openPopup()
+popup.addTo(map);
 
 //DMOP of Bicycle Marker Grouping
-var dmopb = L.layerGroup([dmopb13, dmopb14, dmopb15, dmopb16, dmopb17, dmopb18, dmopb19, dmopb20, dmopb21, dmopb22, dmopb23, dmopb24, dmopb25, dmopb26, dmopb27, dmopb28, dmopb29, dmopb30, dmopb31, dmopb32, dmopb33, dmopb35, dmopb36, dmopb37, dmopb38, dmopb39, dmopb40, dmopb41, dmopb43, dmopb44, dmopb45, dmopb46, dmopb47, dmopb48, dmopb49])
+var dmopb = L.layerGroup([dmopb13, dmopb14, dmopb15, dmopb16, dmopb17, dmopb18, dmopb19, 
+dmopb20, dmopb21, dmopb22, dmopb23, dmopb24, dmopb25, dmopb26, dmopb27, dmopb28, dmopb29, 
+dmopb30, dmopb31, dmopb32, dmopb33, dmopb35, dmopb36, dmopb37, dmopb38, dmopb39, dmopb40, 
+dmopb41, dmopb43, dmopb44, dmopb45, dmopb46, dmopb49, dmopb50, ])
+
+//Mischief to Bicycle Marker Grouping
+var mb = L.layerGroup([mb49, mb51, ])
+
 
 // Layer Controller
 var baseMaps = {
@@ -273,10 +304,12 @@ var baseMaps = {
     "OneMap": onemap,
 };
 
-//remember to change back vv
+
 var overlayMaps = {
     "Theft of Bicycle": tob,
     "DMOP of Bicycle": dmopb,
+    "Mischief to Bicycle": mb,
+    
 };
 
 L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
